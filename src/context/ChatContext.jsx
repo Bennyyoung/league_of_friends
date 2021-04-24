@@ -70,6 +70,7 @@ export const ChatProvider = ({ children, authUser }) => {
   );
 };
 
+
 export const useChat = () => {
   const {
     myChats,
