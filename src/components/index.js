@@ -12,3 +12,12 @@ export * from './ChatInput';
 export * from './MessageList';
 export * from './ImageUpload';
 export * from './RailHeader';
+export * from './VideoPlayer';
+export * from './Notifications'
+export * from './Options';
+export * from './VideoChat';
+export * from './About';
+export * from './ContactSupportTeam';
+export * from "./MeetTheTeam";
+export * from "./NavBar";
+export * from './Home';
