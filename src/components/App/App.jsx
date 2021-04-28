@@ -14,10 +14,18 @@ import {
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { Loader, Segment, Image, Dimmer } from 'semantic-ui-react';
 
+import { useSpring, useTransition, animated } from '@react-spring/web';
+
 export const App = () => {
   const history = useHistory();
   const { authUser } = useAuth();
   const authResolved = useResolved(authUser);
+
+  const styles = useSpring({
+    loop: true,
+    from: { rotateZ: 0 },
+    to: { rotateZ: 180 },
+  });
 
   useEffect(() => {
     if (authResolved) {
@@ -40,26 +48,51 @@ export const App = () => {
       </div>
     </ChatProvider>
   ) : (
+    // <Segment
+    //   style={{
+    //     top: '50%',
+    //     left: '50%',
+    //     margin: '0',
+    //     position: 'absolute',
+    //     msTransform: 'translate(-50%, -50%)',
+    //     transform: 'translate(-50%, -50%)',
+    //     background:
+    //       'linear-gradient(90deg,#7554a0 7%,#7554a0 17%,#6a5fa8 29%,#6367ae 44%,#5774b8 66%,#4687c6 83%,#2ca3db 96%,#16bced 100%,#00d4ff 0)',
+    //     width: '250rem',
+    //     height: '50rem',
+    //   }}
+    // >
+    //   <Dimmer active>
+    //     <Loader size="massive" active>
+    //       Loading
+    //     </Loader>
+    //   </Dimmer>
+
+    //   <Image src="/images/wireframe/short-paragraph.png" />
+    // </Segment>
+
     <Segment
       style={{
-        top: '50%',
-        left: '50%',
-        margin: '0',
-        position: 'absolute',
-        msTransform: 'translate(-50%, -50%)',
-        transform: 'translate(-50%, -50%)',
-        background: 'linear-gradient(90deg,#7554a0 7%,#7554a0 17%,#6a5fa8 29%,#6367ae 44%,#5774b8 66%,#4687c6 83%,#2ca3db 96%,#16bced 100%,#00d4ff 0)',
-        width: '250rem',
+       backgroundColor: '#121212',
         height: '50rem',
       }}
     >
-      <Dimmer active>
-        <Loader size="massive" active>
-          Loading
-        </Loader>
-      </Dimmer>
+      <animated.div
+        style={{
+          width: 80,
+          height: 80,
+          top: '50%',
+          left: '50%',
+          margin: '0',
+          position: 'absolute',
+          msTransform: 'translate(-50%, -50%)',
+          transform: 'translate(-50%, -50%)',
+          backgroundColor: '#46e891',
 
-      <Image src="/images/wireframe/short-paragraph.png" />
+          borderRadius: 16,
+          ...styles,
+        }}
+      />
     </Segment>
   );
 };

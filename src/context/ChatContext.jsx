@@ -13,6 +13,10 @@ export const ChatProvider = ({ children, authUser }) => {
     newChat(chatConfig, { title: '' });
   };
 
+  // const createDM = () => {
+  //  getOrCreateChat(chatConfig, chatConfig.userName,)
+  // }
+
   const deleteChatClick = chat => {
     const isAdmin = chat.admin.username === chatConfig.userName;
 

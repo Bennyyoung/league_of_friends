@@ -21,3 +21,4 @@ export * from './ContactSupportTeam';
 export * from "./MeetTheTeam";
 export * from "./NavBar";
 export * from './Home';
+// export * from './DirectChatPage';

@@ -71,7 +71,7 @@ export const SearchUsers = ({ visible, closeFn }) => {
         loading={loading}
         value={searchTerm}
         results={searchResults}
-        placeholder="Search For Users"
+        placeholder="Search by username"
         open={!!searchResults && !loading}
         input={{
           ref: result => {

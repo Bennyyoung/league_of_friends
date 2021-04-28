@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const NavBar = () => {
   return (
     <>
-      <Menu inverted style={{backgroundColor: '#001529'}} widths={3}>
+      <Menu inverted style={{ backgroundColor: '#121212'}} widths={3}>
         <Link to="/">
           <Menu.Item>
             <Icon name="home" />

@@ -10,6 +10,7 @@ export const ChatToolbar = () => {
 
   return (
     <>
+    <h4 style={{textAlign: 'center'}}>Share ideas with your friends</h4>
       <div className="chat-toolbar">
         <div className="chat-header-text">
           {joinUsernames(selectedChat.people, chatConfig.userName).slice(

@@ -14,7 +14,7 @@ try {
   measurementId: process.env.REACT_APP_MEASUREMENT_ID
  });
 } catch (error) {
- if (!/already ecist/u.test(error.message)) {
+ if (!/already exist/u.test(error.message)) {
   console.error('Firebase admin initialization error', error.stack);
  }
 }

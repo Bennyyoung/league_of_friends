@@ -1,0 +1,18 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex.fill {
+  height: 100%;
+}
+
+.flex.center {
+  justify-content: center;
+}

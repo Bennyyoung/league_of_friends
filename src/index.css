@@ -19,7 +19,7 @@ code {
   overflow: hidden;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90deg,#7554a0 7%,#7554a0 17%,#6a5fa8 29%,#6367ae 44%,#5774b8 66%,#4687c6 83%,#2ca3db 96%,#16bced 100%,#00d4ff 0);
+  background-color: #121212;
 }
 .auth-form {
   width: 500px;
@@ -80,13 +80,21 @@ code {
 }
 .left-rail {
   height: 100%;
-  width: 300px;
-  background-color: #15202b;
+  width: 200px;
 }
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  .left-rail {
+    height: 100%;
+    width: 200px;
+  }
+} */
 .chat-list-container {
   overflow-y: auto;
   height: calc(100% - 150px);
-  background: linear-gradient(90deg,#7554a0 7%,#7554a0 17%,#6a5fa8 29%,#6367ae 44%,#5774b8 66%,#4687c6 83%,#2ca3db 96%,#16bced 100%,#00d4ff 0);
 }
 .no-chats-yet {
   padding: 15px;
@@ -165,13 +173,11 @@ code {
 }
 .left-rail-header .empty-avatar {
   width: 50px;
-  background-color: #001529;
   height: 50px;
 }
 .chats-loading {
   height: 100%;
   position: relative;
-  background-color: #001529;
 }
 .left-rail-header {
   height: 100px;
@@ -179,6 +185,7 @@ code {
   padding: 10px;
   position: relative;
   align-items: center;
+  background-color: #161616;
   box-shadow: 0px 0px 2px black;
 }
 .current-user-info {
@@ -204,7 +211,7 @@ code {
   height: 100%;
   display: flex;
   justify-content: center;
-  background: linear-gradient(90deg,#7554a0 7%,#7554a0 17%,#6a5fa8 29%,#6367ae 44%,#5774b8 66%,#4687c6 83%,#2ca3db 96%,#16bced 100%,#00d4ff 0);
+  background-color: #292b31;
 }
 .no-chat-selected {
   display: flex;
@@ -215,7 +222,7 @@ code {
   align-items: center;
   border-radius: 10px;
   justify-content: center;
-  background-color: #001529;
+  background-color: #4d515d;
   box-shadow: 0px 0px 3px black;
 
   -webkit-touch-callout: none;
@@ -407,6 +414,7 @@ code {
   color: #f2f2f2 !important;
   background-color: #060f18 !important;
 }
+
 .sign-out {
   position: absolute;
   top: 5px;
