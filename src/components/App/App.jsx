@@ -13,6 +13,7 @@ import {
 } from 'components';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { Loader, Segment, Image, Dimmer } from 'semantic-ui-react';
+import { Layout } from 'antd';
 
 import { useSpring, useTransition, animated } from '@react-spring/web';
 
@@ -73,7 +74,7 @@ export const App = () => {
 
     <Segment
       style={{
-       backgroundColor: '#121212',
+        backgroundColor: '#121212',
         height: '50rem',
       }}
     >

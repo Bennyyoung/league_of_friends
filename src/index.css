@@ -80,7 +80,8 @@ code {
 }
 .left-rail {
   height: 100%;
-  width: 200px;
+  width: 50px;
+  color: 'black'
 }
 
 /* ----------- iPhone 6+, 7+ and 8+ ----------- */
@@ -95,13 +96,18 @@ code {
 .chat-list-container {
   overflow-y: auto;
   height: calc(100% - 150px);
+  color: black
 }
+
+
+
 .no-chats-yet {
   padding: 15px;
 }
 .chat-list {
   display: flex;
   flex-direction: column;
+  font-size: 12px;
 }
 .chat-list-item {
   display: flex;
@@ -123,7 +129,7 @@ code {
 }
 .chat-list-item .selected,
 .chat-list-item:hover {
-  background-color: #18181d;
+  background-color: #C0C0C0;
 }
 .chat-list-avatar {
   width: 28px;
@@ -131,7 +137,7 @@ code {
   border-radius: 100%;
 }
 .selected-chat-item {
-  background-color: #18181d;
+  background-color: #C0C0C0;
 }
 .chat-item-delete {
   width: 35px;
@@ -147,6 +153,7 @@ code {
 }
 .chat-list-preview {
   margin-left: 10px;
+  color: black
 }
 .create-chat-button {
   width: 100%;
@@ -181,12 +188,13 @@ code {
 }
 .left-rail-header {
   height: 100px;
+  font-size: 16px;
   display: flex;
   padding: 10px;
   position: relative;
   align-items: center;
-  background-color: #161616;
-  box-shadow: 0px 0px 2px black;
+  background-color: white;
+  /* box-shadow: 0px 0px 2px black; */
 }
 .current-user-info {
   display: flex;

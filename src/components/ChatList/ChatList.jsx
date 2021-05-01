@@ -67,7 +67,7 @@ export const ChatList = () => {
                   </div>
                   <div className="preview-message">
                     {currentChat.last_message.attachments.length
-                      ? <i>{`${currentChat.last_message.sender.username} sent an attchment`}</i>
+                      ? <i style={{color: 'green'}}>{`${currentChat.last_message.sender.username} sent an attchment`}</i>
                       : currentChat.last_message.text.slice(0, 50) + '...'}
                   </div>
                 </div>
