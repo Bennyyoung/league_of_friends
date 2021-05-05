@@ -1,130 +1,157 @@
-import { useRef, useEffect, useState } from 'react';
-import { useSpring, useTransition, animated, to, config } from '@react-spring/web';
-import { useGesture } from 'react-use-gesture';
-import imgs from './data';
-
-import styles from './styles.module.css';
-import './index.css'
-
-const calcX = (y, ly) => -(y - ly - window.innerHeight / 2) / 20;
-const calcY = (x, lx) => -(x - lx - window.innerWidth / 2) / 20;
-
-const wheel = y => {
-  const imgHeight = window.innerWidth * 0.3 - 20;
-  return `translateY(${-imgHeight * (y < 0 ? 6 : 1) - (y % (imgHeight * 5))}px`;
-};
-
-const slides = [
-  'photo-1544511916-0148ccdeb877',
-  'photo-1544572571-ab94fd872ce4',
-  'reserve/bnW1TuTV2YGcoh1HyWNQ_IMG_0207.JPG',
-  'photo-1540206395-68808572332f',
-];
+import './index.css';
 
 export const MeetTheTeam = () => {
-  const [index, set] = useState(0);
-  const transitions = useTransition(index, {
-    key: index,
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
-    config: { duration: 3000 },
-  });
-  useEffect(() => {
-    const t = setInterval(
-      () => set(state => (state + 1) % slides.length),
-      4000,
-    );
-    return () => clearTimeout(t);
-  }, []);
-
-  useEffect(() => {
-    const preventDefault = e => e.preventDefault();
-    document.addEventListener('gesturestart', preventDefault);
-    document.addEventListener('gesturechange', preventDefault);
-
-    return () => {
-      document.removeEventListener('gesturestart', preventDefault);
-      document.removeEventListener('gesturechange', preventDefault);
-    };
-  }, []);
-
-  const domTarget = useRef(null);
-  const [{ x, y, rotateX, rotateY, rotateZ, zoom, scale }, api] = useSpring(
-    () => ({
-      rotateX: 0,
-      rotateY: 0,
-      rotateZ: 0,
-      scale: 1,
-      zoom: 0,
-      x: 0,
-      y: 0,
-      config: { mass: 5, tension: 350, friction: 40 },
-    }),
-  );
-
-  const [{ wheelY }, wheelApi] = useSpring(() => ({ wheelY: 0 }));
-
-  useGesture(
-    {
-      onDrag: ({ active, offset: [x, y] }) =>
-        api.start({ x, y, rotateX: 0, rotateY: 0, scale: active ? 1 : 1.1 }),
-      onPinch: ({ offset: [d, a] }) => api.start({ zoom: d / 200, rotateZ: a }),
-      onMove: ({ xy: [px, py], dragging }) =>
-        !dragging &&
-        api.start({
-          rotateX: calcX(py, y.get()),
-          rotateY: calcY(px, x.get()),
-          scale: 1.1,
-        }),
-      onHover: ({ hovering }) =>
-        !hovering && api.start({ rotateX: 0, rotateY: 0, scale: 1 }),
-      onWheel: ({ event, offset: [, y] }) => {
-        event.preventDefault();
-        wheelApi.set({ wheelY: y });
-      },
-    },
-    { domTarget, eventOptions: { passive: false } },
-  );
-
   return (
-    <>
-      {/* <div className="flex fill center">
-        {transitions((style, i) => (
-          <animated.div
-            className={styles.bg}
-            style={{
-              ...style,
-              backgroundImage: `url(https://images.unsplash.com/${slides[i]}?w=1920&q=80&auto=format&fit=crop)`,
-            }}
-          />
-        ))}
-      </div> */}
-      <h1 style={{ paddingRight: '20px' }}>Meet the Team</h1>
-
-      <div className={styles.container}>
-        <animated.div
-          ref={domTarget}
-          className={styles.card}
-          style={{
-            transform: 'perspective(600px)',
-            x,
-            y,
-            scale: to([scale, zoom], (s, z) => s + z),
-            rotateX,
-            rotateY,
-            rotateZ,
-          }}
-        >
-          <animated.div style={{ transform: wheelY.to(wheel) }}>
-            {imgs.map((img, i) => (
-              <>
-                <div key={i} style={{ backgroundImage: `url(${img})` }} />
-              </>
-            ))}
-          </animated.div>
-        </animated.div>
+    <div className="container">
+      <div className="section-title">
+        <h1>Team</h1>
       </div>
-    </>
+      <div className="row">
+        <div className="column">
+          <div className="team-4">
+            <div className="team-content">
+              <h2>Benjamin Effiong</h2>
+              <h3>CEO &amp; Founder</h3>
+            </div>
+            <div className="team-img">
+              <img
+                src="https://res.cloudinary.com/bloomhub/image/upload/c_scale,w_400/v1618041367/leagueoffriends/benjamin_effiong_lhr38d.jpg"
+                alt="Team Image"
+              />
+              <div className="team-content">
+                <p>Some text goes here that describes about team member</p>
+              </div>
+            </div>
+            <div className="team-content">
+              <div className="team-social">
+                <a
+                  className="social-tw"
+                  href="https://twitter.com/EffiongBenjami2"
+                >
+                  <i className="fab fa-twitter"></i>
+                </a>
+                <a
+                  className="social-fb"
+                  href="https://web.facebook.com/benjamin.effiong.355"
+                >
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  className="social-li"
+                  href="https://www.linkedin.com/in/effiong-benjamin-b4963512a/"
+                >
+                  <i className="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  className="social-in"
+                  href="https://www.instagram.com/iambenjamineffiong/"
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a
+                  className="social-yt"
+                  href="http://www.youtube.com/channel/UC9it1WkgKr5qr1D4Vs-Fuyg"
+                >
+                  <i className="fab fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="column">
+          <div className="team-4">
+            <div className="team-content">
+              <h2>Samuel Chibueze</h2>
+              <h3>Junior Developer</h3>
+            </div>
+            <div className="team-img">
+              <img
+                src="https://res.cloudinary.com/bloomhub/image/upload/c_scale,h_400,w_400/v1618037048/leagueoffriends/samuel_chibueze_da9rzt.jpg"
+                alt="Team Image"
+              />
+              <div className="team-content">
+                <p>Some text goes here that describes about team member</p>
+              </div>
+            </div>
+            <div className="team-content">
+              <div className="team-social">
+                <a
+                  className="social-tw"
+                  href="https://twitter.com/unique_Chibueze?s=09"
+                >
+                  <i className="fab fa-twitter"></i>
+                </a>
+                <a className="social-fb" href="">
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  className="social-li"
+                  href="https://www.linkedin.com/in/sam-obisike-chibueze-635a63167"
+                >
+                  <i className="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  className="social-in"
+                  href="https://www.instagram.com/p/CNXLmuKn2eD/?igshid=11u4gsakbv65v"
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a className="social-yt" href="">
+                  <i className="fab fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="column">
+          <div className="team-4">
+            <div className="team-content">
+              <h2>
+                Adeola <br /> Apanisile
+              </h2>
+              <h3>Senior Developer</h3>
+            </div>
+            <div className="team-img">
+              <img
+                src="https://res.cloudinary.com/bloomhub/image/upload/c_scale,h_300,w_400/v1618041847/leagueoffriends/adeola_apanisile_fudq9l.jpg"
+                alt="Team Image"
+              />
+              <div className="team-content">
+                <p>Some text goes here that describes about team member</p>
+              </div>
+            </div>
+            <div className="team-content">
+              <div className="team-social">
+                <a
+                  className="social-tw"
+                  href="https://www.linkedin.com/in/adeola-apanisile-b38230182"
+                >
+                  <i className="fab fa-twitter"></i>
+                </a>
+                <a className="social-fb" href="">
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  className="social-li"
+                  href="https://twitter.com/tech_faraday?s=09"
+                >
+                  <i className="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  className="social-in"
+                  href="https://www.instagram.com/faradaytech.code/"
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a className="social-yt" href="">
+                  <i className="fab fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };

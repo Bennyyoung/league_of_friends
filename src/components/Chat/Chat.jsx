@@ -18,7 +18,7 @@ export const Chat = () => {
   }, [myChats]);
 
   return (
-    <>
+    <div className="app">
       <LeftRail />
       {!!chatConfig && (
         <ChatEngine
@@ -87,6 +87,6 @@ export const Chat = () => {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };

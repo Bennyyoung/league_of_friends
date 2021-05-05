@@ -10,6 +10,7 @@ import {
   About,
   MeetTheTeam,
   ContactSupportTeam,
+  VideoChat,
 } from 'components';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { Loader, Segment, Image, Dimmer } from 'semantic-ui-react';
@@ -36,13 +37,14 @@ export const App = () => {
 
   return authResolved ? (
     <ChatProvider authUser={authUser}>
-      <div className="app">
+      <div>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/chat" component={Chat} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/about" component={About} />
+          {/* <Route path="/video-call" component={VideoChat} /> */}
           <Route path="/meet-the-team" component={MeetTheTeam} />
           <Route path="/support-team" component={ContactSupportTeam} />
         </Switch>

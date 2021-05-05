@@ -4,6 +4,9 @@ import { ChatList, RailHeader } from 'components';
 import { Loader } from 'semantic-ui-react';
 import { Drawer, Button } from 'antd';
 import { useState } from 'react';
+import {
+ WechatOutlined
+} from "@ant-design/icons";
 
 export const LeftRail = () => {
   const { myChats, createChatClick } = useChat();
@@ -22,7 +25,7 @@ export const LeftRail = () => {
     <>
       <div className="left-rail">
       <Button type="primary" onClick={() => setVisible(true)}>
-        >>
+      <WechatOutlined />
       </Button>
         <Drawer
           closable={false}
