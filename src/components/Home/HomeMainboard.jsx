@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Pin } from './Pin'
-import './HomeMainboard.css'
+import './homemainboard.module.css'
 
 export const HomeMainboard = (props) => {
  let { pins } = props;

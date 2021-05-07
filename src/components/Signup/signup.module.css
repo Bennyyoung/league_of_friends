@@ -1,0 +1,29 @@
+#signinput1, #signinput2 {
+ margin: 0 auto;
+ background-color: black;
+ /* opacity: 50%; */
+ color: white;
+ margin-top: 10px;
+ width: 300px;
+ height: 59px;
+ font-size: 22px;
+ margin-bottom: 14px;
+ max-width: 527px;
+ padding: 0 10%;
+}
+
+.pass-wrapper {
+ position: relative;
+ display: flex;
+ margin-bottom: 14px;
+}
+
+#eye {
+ position: absolute;
+ top: 33%;
+ left: 42%;
+}
+#eye:hover {
+ color: #00fcb6;
+ cursor: pointer;
+}

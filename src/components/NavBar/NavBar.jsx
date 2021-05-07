@@ -8,7 +8,9 @@ import {
  HomeOutlined,
  IdcardFilled,
  WechatOutlined,
- PhoneOutlined
+ PhoneOutlined,
+ CreditCardOutlined,
+ CustomerServiceOutlined
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 const { Header } = Layout;
@@ -30,14 +32,14 @@ export const NavBar = () => {
         <Menu.Item key="3" icon={<VideoCameraOutlined />}>
           <a href="https://lof-video-chat.netlify.app/"></a>
         </Menu.Item>
-        <Menu.Item key="4" icon={<ContactsOutlined />}>
-          <Link to="/about"></Link>
-        </Menu.Item>
-        <Menu.Item key="5" icon={<UsergroupAddOutlined />}>
+        <Menu.Item key="5" icon={<ContactsOutlined />}>
           <Link to="/meet-the-team"></Link>
         </Menu.Item>
-        <Menu.Item key="6" icon={<PhoneOutlined />}>
+        <Menu.Item key="6" icon={<CustomerServiceOutlined />}>
           <Link to="/support-team"></Link>
+        </Menu.Item>
+        <Menu.Item key="7" icon={<CreditCardOutlined />}>
+          <Link to="/donate"></Link>
         </Menu.Item>
       </Menu>
     </Header>

@@ -20,29 +20,29 @@ export const HomeHeader = (props) => {
   return (
     <Wrapper>
       <LogoWrapper>
-        <IconButton>
+        {/* <IconButton>
           <Pinterest />
-        </IconButton>
+        </IconButton> */}
       </LogoWrapper>
-      <HomePageButton>
+      {/* <HomePageButton>
         <Link to="/">Homepage</Link>
       </HomePageButton>
       <FollowingButton>
         <Link to="/follow">Following</Link>
-      </FollowingButton>
+      </FollowingButton> */}
       <SearchWrapper>
         <SearchBarWrapper>
           <IconButton>
             <SearchIcon />
           </IconButton>
           <form>
-            <input type="text" onChange={e => setInput(e.target.value)} />
+            <input type="text" placeholder="Search for an image" onChange={e => setInput(e.target.value)} />
             <button type="submit" onClick={onSearchSubmit}></button>
           </form>
         </SearchBarWrapper>
       </SearchWrapper>
       <IconsWrapper>
-        <IconButton>
+        {/* <IconButton>
           <Notifications />
         </IconButton>
         <IconButton>
@@ -50,10 +50,10 @@ export const HomeHeader = (props) => {
         </IconButton>
         <IconButton>
           <FaceIcon />
-        </IconButton>
-        <IconButton>
+        </IconButton> */}
+        {/* <IconButton>
           <KeyboardArrowDown />
-        </IconButton>
+        </IconButton> */}
       </IconsWrapper>
     </Wrapper>
   );

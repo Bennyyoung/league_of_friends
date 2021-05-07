@@ -17,6 +17,7 @@ export const Home = () => {
   const onSearchSubmit = term => {
     getImages(term).then(res => {
       let results = res.data.results;
+      console.log(results)
 
       let newPins = [...results, ...pins];
 
@@ -31,7 +32,7 @@ export const Home = () => {
     let promises = [];
     let pinData = [];
 
-    let pins = ['ocean', 'Tokyo', 'dogs', 'cats', 'Ball', 'bats'];
+    let pins = ['health', 'Home Decor', 'leeve tatoos', 'drawings', 'survival tips', 'sneakers', 'landscaping', 'naruto shippuden', 'street art', 'dogs', 'modern house designs', 'money heist', 'game of thrones', 'comics art', 'ink art', 'earth illustration', 'beards', 'pokemon', 'funny quotes', 'home renovation', 'portrait photography', 'cat breeds', 'garden desings', 'gadgets'];
 
     pins.forEach(pinTerm => {
       promises.push(

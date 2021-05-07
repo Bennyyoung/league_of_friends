@@ -11,6 +11,7 @@ import {
   MeetTheTeam,
   ContactSupportTeam,
   VideoChat,
+  Donations
 } from 'components';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { Loader, Segment, Image, Dimmer } from 'semantic-ui-react';
@@ -47,6 +48,8 @@ export const App = () => {
           {/* <Route path="/video-call" component={VideoChat} /> */}
           <Route path="/meet-the-team" component={MeetTheTeam} />
           <Route path="/support-team" component={ContactSupportTeam} />
+          <Route path="/donate" component={Donations} />
+
         </Switch>
       </div>
     </ChatProvider>

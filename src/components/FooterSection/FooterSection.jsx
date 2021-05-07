@@ -5,9 +5,9 @@ const { Header, Content, Footer } = Layout;
 export const FooterSection = () => {
   return (
     <Layout>
-      <Footer style={{ textAlign: 'center' }}>
+      <Footer style={{ textAlign: 'center', marginTop: 'auto' }}>
         League of Friends © {new Date().getFullYear()} a subsidiary of{' '}
-        <a href="bloomhubng.com">BloomHub Limited</a>
+        <a href="https://bloomhubng.com">BloomHub Limited</a>
       </Footer>
     </Layout>
   );
