@@ -1,6 +1,13 @@
 {
-  "short_name": "PortEXE Chat Tutorial",
-  "name": "Building a complete chat application with React and Chatengine.io",
+  "short_name": "lof",
+  "name": "League of Friends",
+  "icons": [
+   {
+    "src": "/img/pointLeft.png",
+    "type": "image/png",
+    "sizes": "1024x1024"
+   }
+  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
