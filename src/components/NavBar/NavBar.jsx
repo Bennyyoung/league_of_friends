@@ -41,6 +41,9 @@ export const NavBar = () => {
         <Menu.Item key="7" icon={<CreditCardOutlined />}>
           <Link to="/donate"></Link>
         </Menu.Item>
+        <Menu.Item key="7" icon={<IdcardFilled />}>
+          <Link to="/user-profile"></Link>
+        </Menu.Item>
       </Menu>
     </Header>
    </Layout>

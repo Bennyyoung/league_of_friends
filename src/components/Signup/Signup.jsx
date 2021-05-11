@@ -33,12 +33,18 @@ export const Signup = () => {
               userName,
               userId: res.user.uid,
             }),
-          }).then(() => {
-            fb.firestore
-              .collection('chatUsers')
-              .doc(res.user.uid)
-              .set({ userName, avatar: '' });
-          });
+          })
+            .then(() => {
+              // Send verification email
+              fb.auth.sendSignInLinkToEmail();
+              alert('Email sent');
+            })
+            .then(() => {
+              fb.firestore
+                .collection('chatUsers')
+                .doc(res.user.uid)
+                .set({ userName, avatar: '' });
+            });
         } else {
           setServerError(
             "We're having trouble signing you up. Please try again.",
@@ -59,7 +65,7 @@ export const Signup = () => {
 
   return (
     <div className="auth-form">
-      <h1 style={{color: 'white'}}>Signup</h1>
+      <h1 style={{ color: 'white' }}>Signup</h1>
       <Formik
         onSubmit={signup}
         validateOnMount={true}
@@ -68,8 +74,13 @@ export const Signup = () => {
       >
         {({ isValid, isSubmitting }) => (
           <Form>
-            <FormField name="userName" label="User Name" id="signinput1"/>
-            <FormField name="email" label="Email" id="signinput2" type="email" />
+            <FormField name="userName" label="Username" id="signinput1" />
+            <FormField
+              name="email"
+              label="Email"
+              id="signinput2"
+              type="email"
+            />
 
             <div className="pass-wrapper">
               <FormField
@@ -83,7 +94,9 @@ export const Signup = () => {
                 label="Verify Password"
                 type={passwordShown ? 'text' : 'password'}
               />
-              <i id="eye" onClick={togglePasswordVisibility}>{eye}</i>
+              <i id="eye" onClick={togglePasswordVisibility}>
+                {eye}
+              </i>
             </div>
 
             <div className="auth-link-container">

@@ -8,15 +8,13 @@ input[type=text], select, textarea {
 }
 
 input[type=submit] {
- background-color: #04AA6D;
- color: white;
- padding: 12px 20px;
+ padding: 10px;
+ border-radius: 3px;
+ outline: none;
  border: none;
+ /* color: white; */
  cursor: pointer;
-}
-
-input[type=submit]:hover {
- background-color: #45a049;
+ background-color: #030a24;
 }
 
 /* Style the container/contact section */

@@ -11,7 +11,8 @@ import {
   MeetTheTeam,
   ContactSupportTeam,
   VideoChat,
-  Donations
+  Donations,
+  UserProfile
 } from 'components';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { Loader, Segment, Image, Dimmer } from 'semantic-ui-react';
@@ -49,6 +50,8 @@ export const App = () => {
           <Route path="/meet-the-team" component={MeetTheTeam} />
           <Route path="/support-team" component={ContactSupportTeam} />
           <Route path="/donate" component={Donations} />
+          <Route path="/user-profile" component={UserProfile} />
+
 
         </Switch>
       </div>
