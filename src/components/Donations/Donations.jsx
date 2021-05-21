@@ -1,6 +1,33 @@
 import { usePaystackPayment } from 'react-paystack';
 import './Donations.css';
 import { Space, Card } from 'antd';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(theme => ({
+ container: {
+  width: '100%',
+  paddingRight: '15px',
+  paddingLeft: '15px',
+  marginRight: 'auto',
+  marginLeft: 'auto',
+  width: '100%',
+  justifyContent: 'center',
+  alignItems: 'center',
+ },
+ section_title: {
+  width: '100%',
+  textAlign: 'center',
+  padding: '45px 0 30px 0',
+ },
+
+ section_title_h1: {
+  color: '#353535',
+  fontSize: '50px',
+  letterSpacing: '5px',
+  marginBottom: '5px',
+ }
+}));
+
 
 const oneThousandConfig = {
   reference: new Date().getTime(),
@@ -25,6 +52,9 @@ const threeHundredConfig = {
 };
 
 export const Donations = () => {
+ const classes = useStyles();
+
+
  const OneThousandPayment = () => {
   const initializePayment = usePaystackPayment(oneThousandConfig);
   return (
@@ -71,9 +101,9 @@ export const Donations = () => {
   };
 
   return (
-    <Space direction="vertical" className="container">
-      <div className="section-title">
-        <h1>Buy us a Coffee</h1>
+    <Space direction="vertical" className={classes.container}>
+      <div className={classes.section_title}>
+        <h1 className={classes.section_title_h1}>Buy us a Coffee</h1>
       </div>
 
       <Card title="Donate ₦1000" style={{ width: 300 }}>

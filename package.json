@@ -15,6 +15,7 @@
     "@testing-library/user-event": "^12.5.0",
     "antd": "^4.15.4",
     "axios": "^0.21.1",
+    "cors": "^2.8.5",
     "firebase": "^8.1.1",
     "formik": "^2.2.5",
     "react": "^17.0.1",
@@ -30,6 +31,7 @@
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.1",
     "simple-peer": "^9.11.0",
+    "socket.io": "^4.1.1",
     "socket.io-client": "^4.0.1",
     "styled-components": "^5.2.3",
     "web-vitals": "^0.2.4",
@@ -37,6 +39,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "server": "node server/index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -30,7 +30,7 @@ export const NavBar = () => {
           <Link to="/chat"></Link>
         </Menu.Item>
         <Menu.Item key="3" icon={<VideoCameraOutlined />}>
-          <a href="https://lof-video-chat.netlify.app/"></a>
+          <Link to="/video-call"></Link>
         </Menu.Item>
         <Menu.Item key="5" icon={<ContactsOutlined />}>
           <Link to="/meet-the-team"></Link>
@@ -41,9 +41,9 @@ export const NavBar = () => {
         <Menu.Item key="7" icon={<CreditCardOutlined />}>
           <Link to="/donate"></Link>
         </Menu.Item>
-        <Menu.Item key="7" icon={<IdcardFilled />}>
+        {/* <Menu.Item key="7" icon={<IdcardFilled />}>
           <Link to="/user-profile"></Link>
-        </Menu.Item>
+        </Menu.Item> */}
       </Menu>
     </Header>
    </Layout>

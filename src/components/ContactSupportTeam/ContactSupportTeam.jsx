@@ -3,8 +3,41 @@ import { fb } from 'service';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { makeStyles } from '@material-ui/core/styles';
+
+
+const useStyles = makeStyles(theme => ({
+ container: {
+  width: '100%',
+  // paddingRight: '15px',
+  // paddingLeft: '15px',
+  marginRight: 'auto',
+  marginLeft: 'auto',
+  width: '100%',
+  justifyContent: 'center',
+  alignItems: 'center',
+  borderRadius: '5px',
+  padding: '10px',
+ 
+ },
+ section_title: {
+  width: '100%',
+  textAlign: 'center',
+  padding: '45px 0 30px 0',
+ },
+
+ section_title_h1: {
+  color: '#353535',
+  fontSize: '50px',
+  letterSpacing: '5px',
+  marginBottom: '5px',
+ }
+}));
 
 export const ContactSupportTeam = () => {
+ const classes = useStyles();
+
+
  const { register, handleSubmit, formState: { errors }} = useForm()
 
   const [firstName, setFirstName] = useState('');
@@ -39,9 +72,9 @@ export const ContactSupportTeam = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="section-title">
-          <h1>Contact Support Team</h1>
+      <div className={classes.container}>
+      <div className={classes.section_title}>
+        <h1 className={classes.section_title_h1}>Contact Support Team</h1>
           <h4>Swing by for a cup of coffee, or leave us a message:</h4>
         </div>
         <div className="row">
@@ -353,7 +386,7 @@ export const ContactSupportTeam = () => {
                 onChange={e => setMessage(e.target.value)}
               ></textarea>
 
-              <button type="submit">Submit</button>
+              <button style={{ cursor: 'pointer' }} className="button" type="submit">Submit</button>
             </form>
           </div>
         </div>

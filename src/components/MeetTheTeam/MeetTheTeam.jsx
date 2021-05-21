@@ -1,10 +1,39 @@
 import './MeetTheTeam.css';
+import { makeStyles } from '@material-ui/core/styles';
+
+
+const useStyles = makeStyles(theme => ({
+ container: {
+  width: '100%',
+  paddingRight: '15px',
+  paddingLeft: '15px',
+  marginRight: 'auto',
+  marginLeft: 'auto',
+  width: '100%',
+  justifyContent: 'center',
+  alignItems: 'center',
+ },
+ section_title: {
+  width: '100%',
+  textAlign: 'center',
+  padding: '45px 0 30px 0',
+ },
+
+ section_title_h1: {
+  color: '#353535',
+  fontSize: '50px',
+  letterSpacing: '5px',
+  marginBottom: '5px',
+ }
+}));
 
 export const MeetTheTeam = () => {
+ const classes = useStyles();
+
   return (
     <>
-      <div className="section-title">
-        <h1>About Us</h1>
+      <div className={classes.section_title}>
+        <h1 className={classes.section_title_h1}>About Us</h1>
         <h4>League of friends is a Nigerian social media service and image sharing designed to create status or class for people in form of discussion groups based on your interest</h4>
       </div>
 

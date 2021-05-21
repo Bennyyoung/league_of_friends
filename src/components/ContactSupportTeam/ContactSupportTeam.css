@@ -12,17 +12,12 @@ input[type=submit] {
  border-radius: 3px;
  outline: none;
  border: none;
- /* color: white; */
  cursor: pointer;
  background-color: #030a24;
 }
 
 /* Style the container/contact section */
-.container {
- border-radius: 5px;
- /* background-color: #f2f2f2; */
- padding: 10px;
-}
+
 
 /* Create two columns that float next to eachother */
 .column {
