@@ -6,15 +6,17 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { ContextProvider } from 'context';
 
 
+
 ReactDOM.render(
  <React.StrictMode>
-  <ContextProvider>
    <Router>
     <NavBar />
+  <ContextProvider>
     <App />
+  </ContextProvider>
    </Router>
    <FooterSection />
-  </ContextProvider>
  </React.StrictMode>,
+
  document.getElementById('root')
 );

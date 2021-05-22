@@ -2,6 +2,8 @@ import { VideoPlayer } from 'components';
 import { Options } from 'components';
 import { Notifications } from 'components';
 import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -33,6 +35,11 @@ export const VideoChat = () => {
 
   return (
       <div className={classes.wrapper}>
+        <AppBar className={classes.appBar} position="static" color="inherit">
+          <Typography variant="h2" align="center">
+            Video Chat
+          </Typography>
+        </AppBar>
         <VideoPlayer />
         <Options>
           <Notifications />

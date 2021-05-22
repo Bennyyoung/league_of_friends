@@ -1,33 +1,33 @@
-import React, { useContext, useState } from "react";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import Paper from "@material-ui/core/Paper";
-import { makeStyles } from "@material-ui/core/styles";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import { Assignment, Phone, PhoneDisabled } from "@material-ui/icons";
+import React, { useContext, useState } from 'react';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import Paper from '@material-ui/core/Paper';
+import { makeStyles } from '@material-ui/core/styles';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { Assignment, Phone, PhoneDisabled } from '@material-ui/icons';
 
-import { SocketContext } from "context";
+import { SocketContext } from 'context';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
-    display: "flex",
-    flexDirection: "column",
+    display: 'flex',
+    flexDirection: 'column',
   },
   gridContainer: {
-    width: "100%",
-    [theme.breakpoints.down("xs")]: {
-      flexDirection: "column",
+    width: '100%',
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
     },
   },
   container: {
-    width: "600px",
-    margin: "35px 0",
+    width: '600px',
+    margin: '35px 0',
     padding: 0,
-    [theme.breakpoints.down("xs")]: {
-      width: "80%",
+    [theme.breakpoints.down('xs')]: {
+      width: '80%',
     },
   },
   margin: {
@@ -37,21 +37,14 @@ const useStyles = makeStyles((theme) => ({
     padding: 20,
   },
   paper: {
-    padding: "10px 20px",
-    border: "2px solid black",
+    padding: '10px 20px',
+    border: '2px solid black',
   },
 }));
 export const Options = ({ children }) => {
-  const {
-    me,
-    callAccepted,
-    name,
-    setName,
-    callEnded,
-    leaveCall,
-    callUser,
-  } = useContext(SocketContext);
-  const [idToCall, setIdToCall] = useState("");
+  const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } =
+    useContext(SocketContext);
+  const [idToCall, setIdToCall] = useState('');
   const classes = useStyles();
   return (
     <Container className={classes.container}>
@@ -65,7 +58,7 @@ export const Options = ({ children }) => {
               <TextField
                 label="Name"
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={e => setName(e.target.value)}
                 fullWidth
               />
               <CopyToClipboard text={me} className={classes.margin}>
@@ -87,14 +80,14 @@ export const Options = ({ children }) => {
               <TextField
                 label="ID to Call"
                 value={idToCall}
-                onChange={(e) => setIdToCall(e.target.value)}
+                onChange={e => setIdToCall(e.target.value)}
                 fullWidth
               />
               {callAccepted && !callEnded ? (
                 <Button
                   variant="contained"
                   color="secondary"
-                  startIcon={<PhoneDisabled fonstSize="large" />}
+                  startIcon={<PhoneDisabled fontSize="large" />}
                   fullWidth
                   onClick={leaveCall}
                   className={classes.margin}
@@ -105,7 +98,7 @@ export const Options = ({ children }) => {
                 <Button
                   variant="contained"
                   color="primary"
-                  startIcon={<Phone fonstSize="large" />}
+                  startIcon={<Phone fontSize="large" />}
                   fullWidth
                   onClick={() => callUser(idToCall)}
                   className={classes.margin}

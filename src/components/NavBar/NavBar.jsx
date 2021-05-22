@@ -17,7 +17,7 @@ const { Header } = Layout;
 
 export const NavBar = () => {
   return (
-   <Layout clasName="layout">
+   <Layout className="layout">
 
     <Header>
       <div className="logo" />

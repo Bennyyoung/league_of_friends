@@ -50,7 +50,7 @@ export const App = () => {
           <Route path="/meet-the-team" component={MeetTheTeam} />
           <Route path="/support-team" component={ContactSupportTeam} />
           <Route path="/donate" component={Donations} />
-          {/* <Route path="/user-profile" component={UserProfile} /> */}
+          <Route path="/user-profile" component={UserProfile} />
 
 
         </Switch>
