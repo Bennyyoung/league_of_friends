@@ -7,7 +7,8 @@ import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { Assignment, Phone, PhoneDisabled } from '@material-ui/icons';
+import { Assignment, Phone, PhoneDisabled, Share } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 
 import { SocketContext } from 'context';
 
@@ -68,9 +69,20 @@ export const Options = ({ children }) => {
                   fullWidth
                   startIcon={<Assignment fontSize="large" />}
                 >
-                  Copy Your ID
+                  Copy your ID
                 </Button>
               </CopyToClipboard>
+              <Link to="/chat" style={{ color: 'white' }}>
+                <Button
+                  style={{ marginTop: '5px' }}
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                  startIcon={<Share fontSize="large" />}
+                >
+                  Share your ID
+                </Button>
+              </Link>
             </Grid>
 
             <Grid item xs={12} md={6} className={classes.padding}>
@@ -78,7 +90,7 @@ export const Options = ({ children }) => {
                 Make a call
               </Typography>
               <TextField
-                label="ID to Call"
+                label="Colleagues ID to Call"
                 value={idToCall}
                 onChange={e => setIdToCall(e.target.value)}
                 fullWidth

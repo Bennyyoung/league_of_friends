@@ -75,6 +75,7 @@ export const RailHeader = () => {
                   {chatConfig.userName[0].toUpperCase()}
                 </div>
               )}
+              <Link to="view-my-profile">View my profile</Link>
 
               <Icon corner name="camera" inverted circular />
             </IconGroup>

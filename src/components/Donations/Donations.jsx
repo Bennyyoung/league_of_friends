@@ -106,19 +106,19 @@ export const Donations = () => {
         <h1 className={classes.section_title_h1}>Buy us a Coffee</h1>
       </div>
 
-      <Card title="Donate ₦1000" style={{ width: 300 }}>
+      <Card title="Donate ₦1000" style={{ width: '300px' }}>
         <p>
           <OneThousandPayment />
         </p>
       </Card>
 
-      <Card title="Donate ₦500" style={{ width: 300 }}>
+      <Card title="Donate ₦500" style={{ width: '300px' }}>
         <p>
           <FiveHundredPayment />
         </p>
       </Card>
 
-      <Card title="Donate ₦300" style={{ width: 300 }}>
+      <Card title="Donate ₦300" style={{ width: '300px' }}>
         <p>
           <ThreeHundredPayment />
         </p>

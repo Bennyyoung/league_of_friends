@@ -23,5 +23,5 @@ export * from "./NavBar";
 export * from './Home';
 export * from './FooterSection';
 export * from './Donations';
-export * from './UserProfile'
+export * from './Profile'
 // export * from './DirectChatPage';

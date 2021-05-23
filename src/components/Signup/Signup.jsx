@@ -18,7 +18,7 @@ export const Signup = () => {
     setPasswordShown(passwordShown ? false : true);
   };
 
-  const signup = ({ email, userName, password }, { setSubmitting }) => {
+  const signup = ({ email, userName, fullName, phoneNumber, DOB, password }, { setSubmitting }) => {
     fb.auth
       .createUserWithEmailAndPassword(email, password)
       .then(res => {
@@ -31,6 +31,9 @@ export const Signup = () => {
             },
             body: JSON.stringify({
               userName,
+              fullName,
+              phoneNumber,
+              DOB, 
               userId: res.user.uid,
             }),
           })
@@ -43,7 +46,7 @@ export const Signup = () => {
               fb.firestore
                 .collection('chatUsers')
                 .doc(res.user.uid)
-                .set({ userName, avatar: '' });
+                .set({ userName, avatar: '', fullName, phoneNumber, DOB });
             });
         } else {
           setServerError(
@@ -74,13 +77,18 @@ export const Signup = () => {
       >
         {({ isValid, isSubmitting }) => (
           <Form>
-            <FormField name="userName" label="Username" id="signinput1" />
+            <FormField name="fullName" label="Full Name" id="signinput1"/>
+            <FormField name="userName" label="Username" id="signinput2" />
+
             <FormField
               name="email"
               label="Email"
-              id="signinput2"
+              id="signinput3"
               type="email"
             />
+            <FormField name="phoneNumber" label="Phone Number" type="number" />
+            <FormField name="DOB" label="DoB" type="date" />
+
 
             <div className="pass-wrapper">
               <FormField

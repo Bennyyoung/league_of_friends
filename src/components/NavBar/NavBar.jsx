@@ -35,6 +35,8 @@ export const NavBar = () => {
         <Menu.Item key="5" icon={<ContactsOutlined />}>
           <Link to="/meet-the-team"></Link>
         </Menu.Item>
+        <Link to="/view-my-profile">View my profile</Link>
+
         <Menu.Item key="6" icon={<CustomerServiceOutlined />}>
           <Link to="/support-team"></Link>
         </Menu.Item>

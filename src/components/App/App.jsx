@@ -12,7 +12,7 @@ import {
   ContactSupportTeam,
   VideoChat,
   Donations,
-  UserProfile
+  Profile,
 } from 'components';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { Loader, Segment, Image, Dimmer } from 'semantic-ui-react';
@@ -47,10 +47,10 @@ export const App = () => {
           <Route path="/signup" component={Signup} />
           <Route path="/about" component={About} />
           <Route path="/video-call" component={VideoChat} />
+          <Route path="/view-my-profile" component={Profile} />
           <Route path="/meet-the-team" component={MeetTheTeam} />
           <Route path="/support-team" component={ContactSupportTeam} />
           <Route path="/donate" component={Donations} />
-          <Route path="/user-profile" component={UserProfile} />
 
 
         </Switch>
