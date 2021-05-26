@@ -3,6 +3,7 @@ import { useChat } from 'context';
 import { useResolved } from 'hooks';
 import { useRef, useState } from 'react';
 import { ImageUpload } from 'components';
+import { Link } from 'react-router-dom';
 import { Icon, IconGroup, Image, Loader } from 'semantic-ui-react';
 
 export const RailHeader = () => {
@@ -75,11 +76,12 @@ export const RailHeader = () => {
                   {chatConfig.userName[0].toUpperCase()}
                 </div>
               )}
-              <Link to="view-my-profile">View my profile</Link>
 
               <Icon corner name="camera" inverted circular />
             </IconGroup>
             <div className="current-username">@{chatConfig.userName}</div>
+
+            <div><Link to="/view-my-profile">View my profile</Link></div>
           </div>
         ) : (
           <div className="user-loading">

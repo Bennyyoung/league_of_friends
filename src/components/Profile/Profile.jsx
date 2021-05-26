@@ -58,7 +58,7 @@ export const Profile = () => {
   <Paper className={classes.paper}>
    <div className={classes.profile}>
     <div className="profile-image">
-     <img alt='profile'/>
+     <img src="https://www.w3schools.com/w3images/map.jpg" alt='profile'/>
     </div>
     <hr />
     <div className="profile-details">
