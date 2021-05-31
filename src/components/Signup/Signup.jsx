@@ -34,11 +34,11 @@ export const Signup = () => {
               userId: res.user.uid,
             }),
           })
-            .then(() => {
-              // Send verification email
-              fb.auth.sendSignInLinkToEmail();
-              alert('Email sent');
-            })
+            // .then(() => {
+            //   // Send verification email
+            //   fb.auth.sendSignInLinkToEmail();
+            //   alert('Email sent');
+            // })
             .then(() => {
               fb.firestore
                 .collection('chatUsers')
