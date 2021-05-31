@@ -19,5 +19,5 @@ export const validationSchema = Yup.object().shape({
  password: Yup.string().required('Required').min(8, 'Must be at least 8 characters'),
  userName: Yup.string().required('Required').matches(/^\S*$/, 'No spaces').min(3, 'Must be at least 3 characters'),
  verifyPassword: Yup.string().required('Required').oneOf([Yup.ref('password'), null], 'Passwords much match'),
- DoB: Yup.date().max(new Date(), "Are you a time traveler?!")
+ DoB: Yup.date()
 }); 

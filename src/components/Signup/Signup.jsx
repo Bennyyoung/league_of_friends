@@ -18,7 +18,7 @@ export const Signup = () => {
     setPasswordShown(passwordShown ? false : true);
   };
 
-  const signup = ({ email, userName, fullName, phoneNumber, DoB, password }, { setSubmitting }) => {
+  const signup = ({ email, userName, fullName, phone, DoB, password }, { setSubmitting }) => {
     fb.auth
       .createUserWithEmailAndPassword(email, password)
       .then(res => {
@@ -30,11 +30,7 @@ export const Signup = () => {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-              email,
               userName,
-              fullName,
-              phoneNumber,
-              DoB, 
               userId: res.user.uid,
             }),
           })
@@ -47,7 +43,7 @@ export const Signup = () => {
               fb.firestore
                 .collection('chatUsers')
                 .doc(res.user.uid)
-                .set({ email, userName, avatar: '', fullName, phoneNumber, DoB });
+                .set({ email, userName, avatar: '', fullName, phone, DoB });
             });
         } else {
           setServerError(
@@ -73,7 +69,7 @@ export const Signup = () => {
       <Formik
         onSubmit={signup}
         validateOnMount={true}
-        initialValues={{ defaultValues }}
+        initialValues={defaultValues}
         validationSchema={validationSchema}
       >
         {({ isValid, isSubmitting }) => (
@@ -86,7 +82,7 @@ export const Signup = () => {
               id="signinput3"
               type="email"
             />
-            <FormField name="phoneNumber" label="Phone Number" type="number" />
+            <FormField name="phone" label="Phone Number" type="number" />
             <div className="pass-wrapper">
               <FormField
                 name="password"
