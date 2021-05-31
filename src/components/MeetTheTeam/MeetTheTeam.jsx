@@ -107,7 +107,7 @@ export const MeetTheTeam = () => {
               </div>
               <div className="team-img">
                 <img
-                  src="https://res.cloudinary.com/bloomhub/image/upload/v1622488406/leagueoffriends/patrick2_bg2xad.jpg"
+                  src="https://res.cloudinary.com/bloomhub/image/upload/c_scale,h_258,w_280/v1622490816/leagueoffriends/patrick2_bg2xad.jpg"
                   alt="Team Image"
                 />
                 <div className="team-content">

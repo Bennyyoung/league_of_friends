@@ -19,7 +19,7 @@ export const NavBar = () => {
   return (
    <Layout className="layout">
 
-    <Header>
+    <Header style={{ position: 'sticky', zIndex: 1, width: '100%' }}>
       <div className="logo" />
 
       <Menu theme="dark" mode="horizontal">
