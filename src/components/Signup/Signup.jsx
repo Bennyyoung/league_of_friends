@@ -114,7 +114,7 @@ export const Signup = () => {
               </span>
             </div>
 
-            <button disabled={isSubmitting || !isValid} type="submit">
+            <button disabled={!isValid || isSubmitting} type="submit">
               Sign Up
             </button>
           </Form>
