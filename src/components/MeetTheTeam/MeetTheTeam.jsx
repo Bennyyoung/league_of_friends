@@ -103,16 +103,18 @@ export const MeetTheTeam = () => {
             <div className="team-4">
               <div className="team-content">
                 <h2>Ptrick Ubong</h2>
-                <h3>CTO</h3>
+                <h3>CTO and Cofounder</h3>
               </div>
               <div className="team-img">
                 <img
-                  src="https://res.cloudinary.com/bloomhub/image/upload/v1622457798/leagueoffriends/patrick_cjrfer.jpg"
+                  src="https://res.cloudinary.com/bloomhub/image/upload/v1622488406/leagueoffriends/patrick2_bg2xad.jpg"
                   alt="Team Image"
                 />
                 <div className="team-content">
                   <p>
                     He is tasked with managing the technical aspects of an organisation to ensure that they're in line with the company's growth targets. They'll also manage technical resources and ensure they're geared towards technological development.
+
+                    He is the one who goes along with that founder’s initial thoughts and helps make the new company flourish
                   </p>
                 </div>
               </div>
@@ -129,7 +131,7 @@ export const MeetTheTeam = () => {
                   </a>
                   <a
                     className="social-li"
-                    href="https://www.linkedin.com/in"
+                    href="https://www.linkedin.com/in/patrick-ubong-16759019a/"
                   >
                     <i className="fab fa-linkedin-in"></i>
                   </a>

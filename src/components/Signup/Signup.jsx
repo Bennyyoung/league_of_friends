@@ -18,7 +18,7 @@ export const Signup = () => {
     setPasswordShown(passwordShown ? false : true);
   };
 
-  const signup = ({ email, userName, fullName, phoneNumber, DOB, password }, { setSubmitting }) => {
+  const signup = ({ email, userName, fullName, phoneNumber, DoB, password }, { setSubmitting }) => {
     fb.auth
       .createUserWithEmailAndPassword(email, password)
       .then(res => {
@@ -30,10 +30,11 @@ export const Signup = () => {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
+              email,
               userName,
               fullName,
               phoneNumber,
-              DOB, 
+              DoB, 
               userId: res.user.uid,
             }),
           })
@@ -46,7 +47,7 @@ export const Signup = () => {
               fb.firestore
                 .collection('chatUsers')
                 .doc(res.user.uid)
-                .set({ userName, avatar: '', fullName, phoneNumber, DOB });
+                .set({ email, userName, avatar: '', fullName, phoneNumber, DoB });
             });
         } else {
           setServerError(
@@ -77,9 +78,8 @@ export const Signup = () => {
       >
         {({ isValid, isSubmitting }) => (
           <Form>
-            <FormField name="fullName" label="Full Name" id="signinput1"/>
             <FormField name="userName" label="Username" id="signinput2" />
-
+            <FormField name="fullName" label="Fullname" id="signinput1" />
             <FormField
               name="email"
               label="Email"
@@ -87,9 +87,6 @@ export const Signup = () => {
               type="email"
             />
             <FormField name="phoneNumber" label="Phone Number" type="number" />
-            <FormField name="DOB" label="DoB" type="date" />
-
-
             <div className="pass-wrapper">
               <FormField
                 name="password"
@@ -105,6 +102,10 @@ export const Signup = () => {
               <i id="eye" onClick={togglePasswordVisibility}>
                 {eye}
               </i>
+
+            <FormField name="DoB" label="DOB" type="date" />
+
+
             </div>
 
             <div className="auth-link-container">
@@ -114,7 +115,7 @@ export const Signup = () => {
               </span>
             </div>
 
-            <button disabled={!isValid || isSubmitting} type="submit">
+            <button type="submit" disabled={!isValid || isSubmitting}>
               Sign Up
             </button>
           </Form>
