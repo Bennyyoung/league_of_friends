@@ -10,7 +10,7 @@ export const defaultValues = {
 };
 
 export const validationSchema = Yup.object().shape({
- fullName: Yup.string().required('Required').min(4, 'Must at least 3 characters'),
+ fullName: Yup.string().required('Required').min(4, 'Must at least 4 characters'),
  email: Yup.string().email('Invalid email address').required('Required'),
  phone: Yup.number().required('Required').min(10, 'Must be at least 10 characters'),
  password: Yup.string().required('Required').min(8, 'Must be at least 8 characters'),

@@ -102,21 +102,17 @@ export const MeetTheTeam = () => {
           <div className="column">
             <div className="team-4">
               <div className="team-content">
-                <h2>Samuel Chibueze</h2>
-                <h3>Junior Developer</h3>
+                <h2>Ptrick Ubong</h2>
+                <h3>CTO</h3>
               </div>
               <div className="team-img">
                 <img
-                  src="https://res.cloudinary.com/bloomhub/image/upload/c_scale,h_400,w_400/v1618037048/leagueoffriends/samuel_chibueze_da9rzt.jpg"
+                  src="https://res.cloudinary.com/bloomhub/image/upload/v1622457798/leagueoffriends/patrick_cjrfer.jpg"
                   alt="Team Image"
                 />
                 <div className="team-content">
                   <p>
-                    Responsible for assisting with the creation of websites and
-                    updating existing web applications using scripting
-                    languages. He works under the supervision of senior
-                    developers, assisting with coding, testing, design
-                    adjustments, and client reviews
+                    He is tasked with managing the technical aspects of an organisation to ensure that they're in line with the company's growth targets. They'll also manage technical resources and ensure they're geared towards technological development.
                   </p>
                 </div>
               </div>
@@ -124,7 +120,7 @@ export const MeetTheTeam = () => {
                 <div className="team-social">
                   <a
                     className="social-tw"
-                    href="https://twitter.com/unique_Chibueze?s=09"
+                    href="https://twitter.com/"
                   >
                     <i className="fab fa-twitter"></i>
                   </a>
@@ -133,13 +129,13 @@ export const MeetTheTeam = () => {
                   </a>
                   <a
                     className="social-li"
-                    href="https://www.linkedin.com/in/sam-obisike-chibueze-635a63167"
+                    href="https://www.linkedin.com/in"
                   >
                     <i className="fab fa-linkedin-in"></i>
                   </a>
                   <a
                     className="social-in"
-                    href="https://www.instagram.com/p/CNXLmuKn2eD/?igshid=11u4gsakbv65v"
+                    href="https://www.instagram.com/p/"
                   >
                     <i className="fab fa-instagram"></i>
                   </a>
