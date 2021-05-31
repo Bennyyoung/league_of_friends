@@ -120,7 +120,7 @@ export const MeetTheTeam = () => {
                 <div className="team-social">
                   <a
                     className="social-tw"
-                    href="https://twitter.com/"
+                    href="https://twitter.com/iamyubee?s=20"
                   >
                     <i className="fab fa-twitter"></i>
                   </a>
