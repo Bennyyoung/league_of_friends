@@ -3,6 +3,7 @@ import { useChat } from 'context';
 import { Icon } from 'semantic-ui-react';
 import { sendMessage } from 'react-chat-engine';
 import { ImageUpload } from 'components';
+import { Audio } from 'components'
 
 export const ChatInput = () => {
   const { chatConfig, selectedChat } = useChat();
@@ -41,6 +42,7 @@ export const ChatInput = () => {
         >
           <Icon name="attach" color="grey" />
         </div>
+        <div><Audio /></div>
         <input
           value={chatInputText}
           className="chat-input"

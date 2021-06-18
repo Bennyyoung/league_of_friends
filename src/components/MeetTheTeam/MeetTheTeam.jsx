@@ -102,7 +102,7 @@ export const MeetTheTeam = () => {
           <div className="column">
             <div className="team-4">
               <div className="team-content">
-                <h2>Ptrick Ubong</h2>
+                <h2>Patrick Ubong</h2>
                 <h3>CTO and Cofounder</h3>
               </div>
               <div className="team-img">
