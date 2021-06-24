@@ -19,7 +19,7 @@ export const NavBar = () => {
   return (
    <Layout className="layout">
 
-    <Header style={{ position: 'sticky', zIndex: 1, width: '100%' }}>
+    <Header style={{ position: 'fixed', top: 0, width: '100%' }}>
       <div className="logo" />
 
       <Menu theme="dark" mode="horizontal">
@@ -29,16 +29,13 @@ export const NavBar = () => {
         <Menu.Item key="2" icon={<WechatOutlined />}>
           <Link to="/chat"></Link>
         </Menu.Item>
-        <Menu.Item key="3" icon={<VideoCameraOutlined />}>
-          <Link to="/video-call"></Link>
-        </Menu.Item>
-        <Menu.Item key="5" icon={<ContactsOutlined />}>
+        <Menu.Item key="3" icon={<ContactsOutlined />}>
           <Link to="/meet-the-team"></Link>
         </Menu.Item>
-        <Menu.Item key="6" icon={<CustomerServiceOutlined />}>
+        <Menu.Item key="4" icon={<CustomerServiceOutlined />}>
           <Link to="/support-team"></Link>
         </Menu.Item>
-        <Menu.Item key="7" icon={<CreditCardOutlined />}>
+        <Menu.Item key="5" icon={<CreditCardOutlined />}>
           <Link to="/donate"></Link>
         </Menu.Item>
         {/* <Menu.Item key="7" icon={<IdcardFilled />}>

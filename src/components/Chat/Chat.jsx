@@ -55,7 +55,9 @@ export const Chat = () => {
             const chatThatMessageBelongsTo = myChats.find(
               currentChat => currentChat.id === chatId,
             );
-            const filteredChats = myChats.filter(currentChat => currentChat.id !== chatId);
+            const filteredChats = myChats.filter(
+              currentChat => currentChat.id !== chatId,
+            );
             const updatedChat = {
               ...chatThatMessageBelongsTo,
               last_message: message,

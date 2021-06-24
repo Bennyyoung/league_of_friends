@@ -13,6 +13,7 @@ import {
   VideoChat,
   Donations,
   Profile,
+  LeftRail,
 } from 'components';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { Loader, Segment, Image, Dimmer } from 'semantic-ui-react';
@@ -43,6 +44,7 @@ export const App = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/chat" component={Chat} />
+          <Route path="/left-rail" component={Chat} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
           <Route path="/about" component={About} />
@@ -51,8 +53,6 @@ export const App = () => {
           <Route path="/meet-the-team" component={MeetTheTeam} />
           <Route path="/support-team" component={ContactSupportTeam} />
           <Route path="/donate" component={Donations} />
-
-
         </Switch>
       </div>
     </ChatProvider>

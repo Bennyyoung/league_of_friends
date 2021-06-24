@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useChat } from 'context';
 import { joinUsernames } from 'helpers';
 import { Icon } from 'semantic-ui-react';
@@ -10,7 +11,9 @@ export const ChatToolbar = () => {
 
   return (
     <>
-    <h4 style={{textAlign: 'center'}}>Share ideas with your friends</h4>
+      {/* <Link to="/chat">
+        <Icon className="arrow alternate circle left outline icon" style={{float: 'left'}}/>
+      </Link> */}
       <div className="chat-toolbar">
         <div className="chat-header-text">
           {joinUsernames(selectedChat.people, chatConfig.userName).slice(

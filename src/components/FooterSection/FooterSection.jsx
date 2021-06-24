@@ -4,11 +4,11 @@ const { Footer } = Layout;
 
 export const FooterSection = () => {
   return (
-    <Layout>
-      <Footer style={{ textAlign: 'center', marginTop: 'auto', width: '100%', position: 'fixed' }}>
+    <div>
+      <footer style={{ textAlign: 'center', marginTop: 'auto', width: '100%', position: 'fixed' }}>
         League of Friends © {new Date().getFullYear()} a subsidiary of{' '}
         <a href="https://bloomhubng.com">BloomHub Limited</a>
-      </Footer>
-    </Layout>
+      </footer>
+    </div>
   );
 };

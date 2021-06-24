@@ -81,7 +81,7 @@ export const RailHeader = () => {
             </IconGroup>
             <div className="current-username">@{chatConfig.userName}</div>
 
-            <div><Link to="/view-my-profile">View my profile</Link></div>
+            {/* <div><Link to="/view-my-profile">View my profile</Link></div> */}
           </div>
         ) : (
           <div className="user-loading">

@@ -1,32 +1,51 @@
 import { useChat } from 'context';
 import { useResolved } from 'hooks';
-import { ChatList, RailHeader } from 'components';
+import { ChatList, RailHeader, VideoChatModal } from 'components';
 import { Loader } from 'semantic-ui-react';
-import { Drawer, Button } from 'antd';
+import { Drawer, Button, Modal } from 'antd';
 import { useState } from 'react';
+import ModalVideo from 'react-modal-video';
+// import 'node_modules/react-modal-video/scss/modal-video.scss';
+
 import {
- WechatOutlined
-} from "@ant-design/icons";
+  WechatOutlined,
+  ContactsOutlined,
+  VideoCameraOutlined,
+  HomeOutlined,
+  CreditCardOutlined,
+  CustomerServiceOutlined,
+} from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 export const LeftRail = () => {
   const { myChats, createChatClick } = useChat();
   const chatsResolved = useResolved(myChats);
   const [visible, setVisible] = useState(false);
-  // const [placement, setPlacement] = useState('left')
+  const [videoModalVisible, setVideoModalVisible] = useState(false);
 
-  // onChange = (e) => {
-  //  setPlacement({
+  const [showModal, setShowModal] = useState(false);
 
-  //   placement: e.target.value
-  //  })
-  // }
+  const openModal = () => {
+    setShowModal(prev => !prev);
+  };
+
+  const [isOpen, setOpen] = useState(false);
 
   return (
     <>
       <div className="left-rail">
-      <Button type="primary" onClick={() => setVisible(true)}>
-      <WechatOutlined />
-      </Button>
+        <Button type="primary" onClick={() => setVisible(true)}>
+          <WechatOutlined />
+        </Button>
+
+        <div>
+          <VideoChatModal showModal={showModal} setShowModal={setShowModal} />
+        </div>
+
+        <Button type="primary" onClick={openModal}>
+          <VideoCameraOutlined />
+        </Button>
+
         <Drawer
           closable={false}
           visible={visible}

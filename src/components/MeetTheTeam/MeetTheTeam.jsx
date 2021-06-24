@@ -155,7 +155,7 @@ export const MeetTheTeam = () => {
                 <h2>
                   Adeola <br /> Apanisile
                 </h2>
-                <h3>Senior Developer</h3>
+                <h3>IT Support Engineer</h3>
               </div>
               <div className="team-img">
                 <img

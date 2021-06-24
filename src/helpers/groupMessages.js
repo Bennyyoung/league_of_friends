@@ -1,5 +1,7 @@
 export const groupMessages = messages => {
- const finalArr = [];
+//  export const isFirstMessageByUser = !lastMessage || lastMessage.username !== message.sender.username
+ 
+    const finalArr = [];
 
  let currentArr = [];
  let currentAuthor = '';

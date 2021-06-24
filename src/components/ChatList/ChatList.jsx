@@ -16,9 +16,7 @@ export const ChatList = () => {
     <div className="chat-list">
       {myChats.map((currentChat, index) => (
         <div
-          className={`chat-list-item ${
-            selectedChat ?.id === currentChat.id ? 'selected-chat-item' : ''
-          }`}
+          className={`chat-list-item ${selectedChat ?.id === currentChat.id ? 'selected-chat-item' : ''}`}
           key={index}
         >
           <div

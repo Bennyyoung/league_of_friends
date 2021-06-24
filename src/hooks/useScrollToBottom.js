@@ -12,7 +12,7 @@ export const useScrollToBottom = (trigger, className) => {
      }))
    )
     .then(() => {
-     document.getElementByClassName(className)[0].scrollTop = document.getElementByClassName(className)[0].scrollHeight;
+     document.getElementsByClassName(className)[0].scrollTop = document.getElementsByClassName(className)[0].scrollHeight;
     });
   }
  }, [trigger, className]);
